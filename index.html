@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Tiopan Vistar Purba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --persib-blue: #004da1;
+            --persib-yellow: #fdd835;
+        }
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .persib-gradient {
+            background: linear-gradient(135deg, var(--persib-blue) 0%, #002d5e 100%);
+        }
+        .star { color: var(--persib-yellow); font-size: 1.5rem; }
+        
+        /* Animasi Klik */
+        .click-effect {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--persib-yellow);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            0% { width: 0; height: 0; opacity: 0.5; }
+            100% { width: 100px; height: 100px; opacity: 0; }
+        }
+
+        /* Diagram Lingkaran */
+        .skill-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(var(--persib-blue) var(--percentage), #ddd 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: --percentage 2s ease-in-out;
+        }
+        .skill-circle::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+        }
+        .skill-text { position: relative; font-weight: bold; }
+    </style>
+</head>
+<body onclick="createRipple(event)">
+
+    <header class="persib-gradient text-white py-20 px-6 text-center shadow-lg relative overflow-hidden">
+        <div class="stars mb-4">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 border-4 border-white flex items-center justify-center overflow-hidden">
+             <img src="https://via.placeholder.com/150" alt="Foto Tiopan" class="w-full h-full object-cover">
+        </div>
+        <h1 class="text-4xl font-bold uppercase tracking-widest animate__animated animate__fadeInDown">Tiopan Vistar Purba</h1>
+        <p class="mt-2 text-blue-200">Ready to Compete & Learn Everything</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6 space-y-12">
+        
+        <section class="grid md:grid-cols-2 gap-8 animate__animated animate__fadeInUp">
+            <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-blue-700">
+                <h2 class="text-xl font-bold text-blue-800 mb-4">Tentang Diri</h2>
+                <p class="text-gray-700">"Saya seorang yang siap bersaing dengan siapa pun dan siap mempelajari apapun bidangnya."</p>
+                <ul class="mt-4 space-y-2 text-sm">
+                    <li><strong>Lahir:</strong> 2007</li>
+                    <li><strong>📞:</strong> 085179972033</li>
+                    <li><strong>📍:</strong> Langonsari, Pameungpeuk, Kab. Bandung</li>
+                    <li><strong>IG:</strong> <a href="https://instagram.com/_mr.tivis" class="text-blue-600">@_mr.tivis</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md border-l-8 border-yellow-500">
+                <h2 class="text-xl font-bold text-blue-800 mb-4">Hobby</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">🎮 Bermain Game</span>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">⚽ Menonton Bola</span>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">🎵 Mendengarkan Musik</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-center text-blue-800 mb-8">Riwayat Pendidikan</h2>
+            <div class="border-l-4 border-blue-600 ml-4 space-y-8">
+                <div class="relative pl-8">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-blue-600 rounded-full"></div>
+                    <h3 class="font-bold">SMA KP BALEENDAH</h3>
+                    <p class="text-sm text-gray-500">Lulus 2026</p>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-gray-400 rounded-full"></div>
+                    <h3 class="font-bold">SMPN 1 PAMEUNGPEUK</h3>
+                    <p class="text-sm text-gray-500">Lulus 2023</p>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-2.5 top-0 w-5 h-5 bg-gray-400 rounded-full"></div>
+                    <h3 class="font-bold">SDN LANGENSARI</h3>
+                    <p class="text-sm text-gray-500">Lulus 2020</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-2xl font-bold text-center text-blue-800">Bahasa & Keahlian</h2>
+            <div class="flex flex-wrap justify-around gap-8 bg-white p-8 rounded-xl shadow-md">
+                <div class="text-center">
+                    <div class="skill-circle mx-auto" style="--percentage: 0%" id="lang-indo">
+                        <span class="skill-text">100%</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-blue-900">Indonesia</p>
+                </div>
+                <div class="text-center">
+                    <div class="skill-circle mx-auto" style="--percentage: 0%" id="lang-sunda">
+                        <span class="skill-text">100%</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-blue-900">Sunda</p>
+                </div>
+                <div class="text-center">
+                    <div class="skill-circle mx-auto" style="--percentage: 0%" id="lang-eng">
+                        <span class="skill-text">15%</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-blue-900">Inggris</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-800 text-white p-6 rounded-xl grid md:grid-cols-3 gap-4 text-center">
+                <div>✨ Leadership</div>
+                <div>💰 Entrepreneurship</div>
+                <div>😊 People Pleaser (Making others happy)</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-10 text-gray-500 text-sm">
+        <p>&copy; 2026 Tiopan Vistar Purba - Kebanggaan Bandung</p>
+    </footer>
+
+    <script>
+        // Efek Klik Animasi
+        function createRipple(event) {
+            const ripple = document.createElement("div");
+            ripple.classList.add("click-effect");
+            ripple.style.left = `${event.clientX}px`;
+            ripple.style.top = `${event.clientY}px`;
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        // Animasi Diagram Lingkaran saat Scroll
+        const animateSkills = () => {
+            document.getElementById('lang-indo').style.setProperty('--percentage', '100%');
+            document.getElementById('lang-sunda').style.setProperty('--percentage', '100%');
+            document.getElementById('lang-eng').style.setProperty('--percentage', '15%');
+        };
+
+        // Jalankan animasi setelah halaman dimuat
+        window.onload = () => {
+            setTimeout(animateSkills, 500);
+        };
+    </script>
+</body>
+  </html>
